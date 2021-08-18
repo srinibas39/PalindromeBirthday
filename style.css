@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-image: url(./undraw_happy_birthday_s72n.svg);
+  background-size: cover;
+  /* background-color: rgba(255,255,25); */
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: overlay;
+}
+.description {
+  padding: 1rem 1rem;
+  text-align: center;
+  color: #047857;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.header {
+  background-color: #047857;
+  padding: 1rem 1rem;
+  text-align: center;
+  color: #9ca3af;
+  height: 5rem;
+}
+#inputDate {
+  position: absolute;
+  top: 15rem;
+  left: 25rem;
+  height: 8rem;
+  width: 34rem;
+  border: 6px solid #047857;
+  padding: 1rem 9rem;
+  font-size: 17px;
+  /* background-color: #d1fae5; */
+  color: #047857;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.button {
+  position: absolute;
+  top: 24rem;
+  left: 25rem;
+  height: 39px;
+  width: 112px;
+  border-radius: 5px;
+  color: #047857;
+  border: 6px solid #047857;
+  font-size: 1rem;
+  /* background-color: #d1fae5; */
+  font-weight: bold;
+}
+.output {
+  height: 2rem;
+  width: 34rem; /* background-color: yellowgreen; */
+  position: absolute;
+  top: 28rem;
+  left: 25rem;
+  padding: 1rem 1rem;
+  color: #047857;
+  font-size: xx-large;
+  font-weight: bold;
+}
+.gif {
+  position: absolute;
+  top: 27rem;
+  left: 26rem;
+  height: 11rem;
+  opacity: 0.5; 
+  display: none;
+}
