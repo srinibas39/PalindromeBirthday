@@ -2,33 +2,41 @@
 let button = document.querySelector(".button");
 let inputDate = document.querySelector("#inputDate");
 let output = document.querySelector(".output");
+let gif=document.querySelector("iframe")
 
 button.addEventListener("click", function (e) {
     
     let inputDateValue = inputDate.value;
     if (inputDateValue !== "") {
-        let dateList = inputDateValue.split("-");
-        let date = {
-            day: Number(dateList[2]),
-            month: Number(dateList[1]),
-            year: Number(dateList[0])
-        };
-
-        if (checkPalindrome(date)) {
-            output.innerText = `Congrats,your birthday is palindrome.`;
-        }
-        else {
-            let [count,next]= nextPalindromeDate(date);
-            let [ctr,prev]=prevPalindrome(date);
-
-            output.innerText = `The next palindrome date is on ${next.day}-${next.month}-${next.year}.You missed it by ${count} days.
-            Your previous palindrome date is on ${prev.day}-${prev.month}-${prev.year}.You missed it by ${ctr} days ` ;
-
-
-        }
+         gif.style.display="inline";
+         setTimeout(function(){
+            gif.style.display="none";  
+            let dateList = inputDateValue.split("-");
+            let date = {
+                day: Number(dateList[2]),
+                month: Number(dateList[1]),
+                year: Number(dateList[0])
+            };
+    
+            if (checkPalindrome(date)) {
+                output.innerText = `Congrats,your birthday is palindrome.`;
+            }
+            else {
+                let [count,next]= nextPalindromeDate(date);
+                let [ctr,prev]=prevPalindrome(date);
+    
+                output.innerText = `The next palindrome date is on ${next.day}-${next.month}-${next.year}.You missed it by ${count} days.
+                Your previous palindrome date is on ${prev.day}-${prev.month}-${prev.year}.You missed it by ${ctr} days ` ;
+    
+    
+            }
+         },3000)
     }
 
 
+})
+inputDate.addEventListener("click",function(e){
+    output.innerText="";
 })
 function reverseStr(str) {
     let listOfString = str.split("");

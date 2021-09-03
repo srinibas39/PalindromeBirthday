@@ -63,11 +63,11 @@ body {
   font-size: xx-large;
   font-weight: bold;
 }
-.gif {
+iframe{
+  height: 100px;
   position: absolute;
-  top: 27rem;
-  left: 26rem;
-  height: 11rem;
-  opacity: 0.5; 
+  top: 30rem;
+  left: 28rem;
   display: none;
+  
 }
