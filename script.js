@@ -22,11 +22,11 @@ button.addEventListener("click", function (e) {
                 output.innerText = `Congrats,your birthday is palindrome.`;
             }
             else {
-                let [count,next]= nextPalindromeDate(date);
-                let [ctr,prev]=prevPalindrome(date);
+                let [ctr,nextDate]= nextPalindromeDate(date);
+                let [count,prevDate]=prevPalindrome(date);
     
-                output.innerText = `The next palindrome date is on ${next.day}-${next.month}-${next.year}.You missed it by ${count} days.
-                Your previous palindrome date is on ${prev.day}-${prev.month}-${prev.year}.You missed it by ${ctr} days ` ;
+                output.innerText = `The next palindrome date is on ${nextDate.day}-${nextDate.month}-${nextDate.year} (dd-mm-yyyy).You missed it by ${ctr} days.
+                Your previous palindrome date is on ${prevDate.day}-${prevDate.month}-${prevDate.year} (dd-mm-yyyy).You missed it by ${count} days ` ;
     
     
             }
@@ -177,6 +177,7 @@ function nextPalindromeDate(date) {
         nextDate = getNextDate(nextDate);
 
     }
+    nextDate=date2String(nextDate);
     return [ctr,nextDate];
 
 }
@@ -187,6 +188,12 @@ function getPrevDate(date) {
     let day = date.day-1;
     let month = date.month;
     let year = date.year;
+
+    if(month===2){
+        if(leapYear(date)){
+            daysInMonth[1]=29;// If it is a leap year then feb has 29 days instead of 28 daya.
+        }
+    }
 
     //02-05-2021
     if (day < daysInMonth[month - 1]) {
@@ -232,6 +239,7 @@ function prevPalindrome(date) {
         prevDate = getPrevDate(prevDate);
 
     }
+    prevDate=date2String(prevDate);
     return [count, prevDate]
 }
 
